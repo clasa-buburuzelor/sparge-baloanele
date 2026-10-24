@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sparge baloanele!</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="clouds" aria-hidden="true">
+    <span class="cloud c1"></span>
+    <span class="cloud c2"></span>
+    <span class="cloud c3"></span>
+  </div>
+
+  <main id="menu-screen" class="screen">
+    <h1 class="title">Sparge baloanele!</h1>
+    
+    <p class="subtitle">Alege cât de greu vrei să fie jocul</p>
+
+    <div class="levels">
+      <button class="level-btn easy" data-difficulty="easy">
+        <span class="level-icon">🎈</span>
+        <strong>Ușor</strong>
+        <small>Mișcă mouse-ul peste baloane</small>
+      </button>
+
+      <button class="level-btn medium" data-difficulty="medium">
+        <span class="level-icon">🎈🎈</span>
+        <strong>Mediu</strong>
+        <small>Apasă pe baloane</small>
+      </button>
+
+      <button class="level-btn hard" data-difficulty="hard">
+        <span class="level-icon">🎈🎈🎈</span>
+        <strong>Greu</strong>
+        <small>Sparge doar baloanele de o culoare</small>
+      </button>
+
+      <button class="level-btn expert" data-difficulty="expert">
+        <span class="level-icon">🎈🎈🎈🎈</span>
+        <strong>Expert</strong>
+        <small>Super provocare</small>
+      </button>
+    </div>
+  </main>
+
+  <section id="game-screen" class="screen hidden">
+    <header class="hud">
+      <button id="back-btn" class="hud-btn">⬅ Meniu</button>
+      <p id="instruction" class="instruction"></p>
+      <div id="target-box" class="target-box hidden">
+        <span>Sparge baloanele</span>
+        <span id="target-swatch" class="swatch"></span>
+        <strong id="target-name"></strong>
+      </div>
+      <div class="counter">🎈 <span id="remaining">0</span></div>
+    </header>
+    <div id="play-area" class="play-area"></div>
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+  </section>
+
+  <div id="win-overlay" class="overlay hidden">
+    <div class="win-card">
+      <h2>Bravo! 🎉</h2>
+      <p>Ai spart toate baloanele în <strong id="final-time">0</strong> secunde!</p>
+      <button id="restart-btn" class="big-btn green">🔄 Joacă din nou</button>
+      <button id="menu-btn" class="big-btn blue">🏠 Alege altă dificultate</button>
+    </div>
+  </div>
+
+  <button id="cursor-toggle" class="cursor-toggle" data-mode="ladybug" type="button"
+          aria-label="Folosește-o pe Bubu ca cursor" title="Folosește-o pe Bubu ca cursor">
+    <img id="toggle-img" class="toggle-img" alt="">
+    <svg class="toggle-arrow" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 2 L5 19 L9.5 14.8 L12.6 21.5 L15.6 20.1 L12.5 13.5 L18.8 13.2 Z"
+            fill="#fff" stroke="#222" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <img id="cursor-follower" class="cursor-follower" alt="" aria-hidden="true">
+
+  <script src="script.js"></script>
+</body>
+</html>
